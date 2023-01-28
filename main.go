@@ -43,6 +43,21 @@ func main() {
 
 	var edad = 1
 	var resultado = 5 > edad //bool
+	
+	var dog string
+	dog = "perro"
+	var gato string = "gato
+	
+	var ave, hamster string = "ave", 4
+		
+	persona := "persona
+	
+	// el := no sirve para reasignar el valor de la variable a menos que se agregue dentro de dos asignaciones siempre que una ya haya sido declarada
+
+	fmt.Println(dog)
+	fmt.Println(gato)
+	fmt.Println(ave, hamster)
+	fmt.Println(persona)
 
 	fmt.Println(resultado)
 
