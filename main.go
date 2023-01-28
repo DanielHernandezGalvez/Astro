@@ -40,7 +40,9 @@ func main() {
 	// <=
 	// ==
 	// !=
+	const pi = 3.1416
 
+	fmt.Println(pi)
 	var edad = 1
 	var resultado = 5 > edad //bool
 	
