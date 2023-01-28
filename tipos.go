@@ -51,6 +51,22 @@ func main() {
 	food[3] = "v"
 	
 	set := [7]string{"q", "d", "fd", "ds"...}
+	
+	
+		var food [3]string
+		food[0] = "d"
+		food[1] = "3"
+		food[2] = "f"
+		food[3] = "v"
+	
+
+	set := [4]string{"q", "d", "fd", "ds"}
+	uniletra := set[0:2] // si no se pone el 0 go supone que se empieza desde 0
+	duoletra := set[3:4]
+	set[0] = "1"
+	fmt.Println(uniletra)
+	fmt.Println(duoletra)
+	fmt.Println(set)
 
 	
 }
