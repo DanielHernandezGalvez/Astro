@@ -36,4 +36,21 @@ func main() {
 	fmt.Println("niño o viejo", age < 18 || age > 60)
 	fmt.Println(!(3 == 3))
 	
+	fruit := "manzana"
+	fmt.Printf("Tipo: %T, Valor: %v", fruit, fruit, &fruit)
+	fruit := "manzana"
+	var p *string
+	p = &fruit
+	fmt.Printf("Tipo: %T, Valor: %s, Direccion: %v", fruit, fruit, &fruit)
+	fmt.Printf("Tipo: %T, Valor: %v", p, p)
+	
+	var food [3]string
+	food[0] = "d"
+	food[1] = "3"
+	food[2] = "f"
+	food[3] = "v"
+	
+	set := [7]string{"q", "d", "fd", "ds"...}
+
+	
 }
