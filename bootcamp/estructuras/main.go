@@ -15,8 +15,8 @@ func main() {
 		Country:   "Colombia",
 	}
 
-	/* 	git := course{"Git", "Beto", "Bolivia"}
-	   	css := course{Professor: "Alvaro"} */
+		git := course{"Git", "Beto", "Bolivia"}
+	   	css := course{Professor: "Alvaro"} 
 
 	p := &db
 	p.Professor = "Alvaro"
