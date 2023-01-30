@@ -62,6 +62,21 @@ func main() {
 	fmt.Println(persona)
 
 	fmt.Println(resultado)
+	
+	//Estructuras
+	type course struct {
+		Name 		string
+		Professor	string
+		Country		string
+	}
+	
+	db := course{
+		Name:	"Bases de datos",
+		Professor: "Alexys",
+		Coutry;	"mexico",
+	}
+	
+	fmt.Printf("%v\n", db)
 
 }
 
