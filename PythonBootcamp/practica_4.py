@@ -220,3 +220,29 @@ valores_pares = [valor for valor in valores if valor%2 == 0]
 temperatura_fahrenheit = [32, 212, 275]
  
 grados_celsius = [(temperatura-32)*(5/9) for temperatura in temperatura_fahrenheit]
+
+# Adivina el numero
+from random import randint
+
+intentos = 0
+numero_secreto = randint(1,100)
+nombre = input("Dime tu nombre: ")
+
+print(f"Bueno {nombre}, he pensado un numer oentre 1 y 100\n tienes 8 intentos para adivinar")
+
+while intentos < 8:
+    estimado = int(input("¿Cual es el número?: "))
+    intentos += 1
+    
+    if estimado < numero_secreto:
+        print("mi numero es más alto")
+
+    if estimado > numero_secreto:
+        print("mi nuero es más bajo")
+
+    if estimado == numero_secreto:
+        print(f"felicidades {nombre}! has adivinado en {intentos}")    
+        break
+
+if estimado != numero_secreto:
+    print("Perdiste tus 8 intentos, el número secreto era {numero_secreto}")
