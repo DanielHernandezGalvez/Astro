@@ -257,3 +257,58 @@ class Libro():
  
     def __del__(self):
         print(f'Libro eliminado')
+        
+# Cuenta bancaria
+class Persona:
+    def __init__(self, nombre, apellido):
+        self.nombre = nombre
+        self.apelido = apellido
+
+class Cliente(Persona):
+    def __init__(self, nombre, apellido, numero_cuenta, balance = 0):
+        super().__init__(nombre, apellido)
+        self.numero_cuenta = numero_cuenta
+        self.balance = balance
+
+    def __str__(self):
+        return f"Cliente {self.nombre} {self.apelido}\nBalance de cuenta {self.numero_cuenta}: {self.balance}"
+    
+    def depositar(self, monto_deposito):
+        self.balance += monto_deposito
+        print("Deeposito aceptado")
+
+    def retirar(self, monto_retiro):
+        if self.balance >= monto_retiro:
+            self.balance -= monto_retiro
+            print("Retiro realizado")
+        else:
+            print("fondos insuficientes")
+
+    
+def crear_cliente():
+    nombre_cl = input("ingrese su nombre")
+    apellido_cl = input("ingrese su apellido")
+    numero_cuenta = input("ingrese su cuenta")
+    cliente = Cliente(nombre_cl, apellido_cl, numero_cuenta)
+    return cliente
+
+def inicio():
+    mi_cliente = crear_cliente()
+    print(mi_cliente)
+    opcion = 0
+
+    while opcion != "S":
+        print("elige: Depositar (D), Retirar (R) o salir (S)")
+        opcion = input()
+
+        if opcion == "D":
+            monto_deposito = int(input("Monto a depositar: "))
+            mi_cliente.depositar(monto_deposito)
+        elif opcion == "R":
+            monto_ret = int(input("monto a retirar"))
+            mi_cliente.retirar(monto_ret)
+        print(mi_cliente)
+
+    print("Gracias por operar en banco python")
+
+inicio()
