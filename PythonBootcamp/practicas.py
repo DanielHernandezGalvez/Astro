@@ -1,6 +1,6 @@
 Práctica Print 1
 
-print("Me encanta estudiar Python")
+print("Me encanta estudiar Python SIIIUUUUUUU")
 
 Práctica Print 2
 
