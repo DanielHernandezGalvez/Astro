@@ -1,6 +1,10 @@
 import pygame
 import random
 import math
+from pygame import mixer
+
+# ¡Recuerda convertir a .exe!
+
 
 # Inicializar pygame
 pygame.init()
@@ -16,6 +20,10 @@ icono = pygame.image.load("imagen en carpeta")
 pygame.display.set_icon(icono)
 fondo = pygame.image.load("imagen de fondo")
 
+# agregar musica
+mixer.music.load("rutadel archivo")
+mixer.music.set_volume(0.3)
+mixer.music.play(-1)
 
 # jugador
 img_jugador = pygame.image.load("imagen del cohete")
@@ -48,7 +56,23 @@ bala_visible = False
 
 # puntaje
 puntaje = 0
+fuente = pygame.font.Font("freesansbold.ttf", 32)
+texto_x = 10
+texto_y = 10
 
+
+# texto final del juego
+fuente_final = pygame.font.Font("fastest.ttf", 40)
+
+def texto_final():
+    mi_fuente_final = fuente_final.render("GAME OVER", True, (255, 255, 255))
+    pantalla.blit(mi_fuente_final, (60, 200))
+
+
+# funcion mostrar puntaje
+def mostrar_puntaje(x, y):
+    texto = fuente.render(f"Puntaje: {puntaje}", True, (255, 255, 255))
+    pantalla.blit(texto, (x,y))
 
 # funcion jugador
 def jugador(x, y):
@@ -97,6 +121,8 @@ while se_ejecuta:
             if evento.key == pygame.K_RIGHT:
                 jugador_x_cambio = 1
             if evento.key == pygame.K_SPACE:
+                sonido_bala = mixer.Sound("disparo.mp3")
+                sonido_bala.play()
                 if not bala_visible == False:
                     bala_x = jugador_x
                     disparar_bala(bala_x, bala_y)
@@ -117,6 +143,14 @@ while se_ejecuta:
 
      # ubicacion del enemigo
     for e in range(cantidad_enemigos):
+
+        # fin del juego
+        if enemigo_y[e] > 500:
+            for k in range(cantidad_enemigos):
+                enemigo_y[k] = 1000
+            texto_final()
+            break
+
         enemigo_x[e] += enemigo_x_cambio[e]
 
     # mantener dentro de los bordes al enemigo
@@ -130,6 +164,8 @@ while se_ejecuta:
           # colision
         colicion = hay_colision(enemigo_x[e], enemigo_y[e], bala_x, bala_y)
         if colicion:
+            sonido_colision = mixer.Sound("golpe.mp3")
+            sonido_colision.play()
             bala_y = 500
             bala_visible = False
             puntaje += 1
@@ -153,6 +189,8 @@ while se_ejecuta:
 
 
     jugador(jugador_x, jugador_y)
+
+    mostrar_puntaje(texto_x, texto_y)
 
     # actualizar
     pygame.display.update()
