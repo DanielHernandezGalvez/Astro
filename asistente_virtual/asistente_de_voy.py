@@ -205,5 +205,11 @@ def pedir_cosas():
                 continue
             except:
                 hablar("perdón, no la encontré")
+        elif "adios" in pedido:
+            hablar("me voy, si me necesitas aqui estoy ")
+            break
 
-hablar("primera pureba de asistente virtual, si escuchas esto felicidades ¡funciona!")
+# hablar("primera pureba de asistente virtual, si escuchas esto felicidades ¡funciona!")
+
+
+pedir_cosas()
