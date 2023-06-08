@@ -9,6 +9,7 @@
     $contador = 2;
 
     while($contador <= 20){
+        
         $numero *= $contador;
 
         echo $numero."<br/>";
