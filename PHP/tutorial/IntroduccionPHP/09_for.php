@@ -3,7 +3,12 @@
 ?>
 
 <?php
-  for($i = 1; $i < 10; $i++){
+  for($i = 1; $i <= 10; $i++){
+    if($i == 10){
+      echo "El numero es 10 <br/>";
+      continue;
+      // break;
+    }
     echo $i."<br/>";
   }
 ?>
