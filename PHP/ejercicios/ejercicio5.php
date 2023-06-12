@@ -4,7 +4,6 @@
     número pasado en un parametro GET por la URL 
     */
 
-    // url =http://localhost:3000/backend/PHP/ejercicios/ejercicio5.php?numero=2
 
 
     if(isset($_GET["numero"]) && is_numeric($_GET["numero"])){
