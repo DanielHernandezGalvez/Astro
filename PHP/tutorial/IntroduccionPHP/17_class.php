@@ -23,7 +23,4 @@
   // var_dump($cliente);
   // echo "<pre>";
 
-  // echo "<pre>";
-  // var_dump($cliente_2);
-  // echo "<pre>";
 ?>
