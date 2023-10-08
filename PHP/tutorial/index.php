@@ -1,1 +1,0 @@
-<?php echo '<h1> Hola perris </h1>'; ?>
