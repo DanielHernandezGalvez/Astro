@@ -1,22 +1,16 @@
 ---
-  const {title, description} = Astro.props
+const {
+  post: { title, description, content, created_at },
+} = Astro.props;
 ---
 
-<article 
-    class="bg-[#1f2937] text-white max-w-sm px-5 
-        py-6 rounded"
-    >
-  <img
-    src="https://images.pexels.com/photos/18467504/pexels-photo-18467504/free-photo-of-procesado-con-vsco-con-fn16-preestablecido.jpeg?auto=compress&cs=tinysrgb&w=300&lazy=load"
-    alt=""
-  />
-  <h2>Titulo</h2>
-  <p>descripción</p>
+<article class="bg-[#1f2937] text-white max-w-sm px-5
+        py-6 rounded my-6">
+
+  <h2>{title}</h2>
+  <p>{description}</p> 
   <p>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui enim, voluptas
-    esse dolore quaerat voluptatem aperiam ex expedita laudantium velit porro
-    assumenda delectus nobis inventore veritatis maxime reprehenderit ab
-    temporibus.
+    {content}
   </p>
-  <p>10/10/23 - 16 min read</p>
+  <p>{created_at}</p>
 </article>
