@@ -5,20 +5,12 @@ const response = await fetch("http://localhost:3000/posts");
 const posts = await response.json();
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
+
+
     <DefaultLayout>
       <h1>Astro</h1>
       <div class="flex justify-evenly flex-wrap">
         {posts.map((post) => <Post post={post} />)}
       </div>
     </DefaultLayout>
-  </body>
-</html>
+
