@@ -1,5 +1,6 @@
 ---
 import Post from "../components/Post.astro";
+import DefaultLayout from "../layouts/DefaultLayout.astro";
 const response = await fetch("http://localhost:3000/posts");
 const posts = await response.json();
 ---
@@ -13,9 +14,11 @@ const posts = await response.json();
     <title>Astro</title>
   </head>
   <body>
-    <h1>Astro</h1>
-    <div class="flex justify-evenly flex-wrap">
-    {posts.map((post) => <Post post={post} />)}
-  </div>
+    <DefaultLayout>
+      <h1>Astro</h1>
+      <div class="flex justify-evenly flex-wrap">
+        {posts.map((post) => <Post post={post} />)}
+      </div>
+    </DefaultLayout>
   </body>
 </html>

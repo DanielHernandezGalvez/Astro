@@ -4,13 +4,14 @@ const {
 } = Astro.props;
 ---
 
-<article class="bg-[#1f2937] text-white max-w-sm px-5
-        py-6 rounded my-6">
-
-  <h2>{title}</h2>
-  <p>{description}</p> 
+<article
+  class="bg-[#1f2937] text-white max-w-sm px-5
+        py-6 rounded my-6 mx-4"
+>
+  <h2 class="text-3xl">{title}</h2>
+  <p>{description}</p>
   <p>
-    {content}
+    {content.slice(0, 200) + "..."}
   </p>
-  <p>{created_at}</p>
+  <i>{new Date(created_at).toLocaleDateString()}</i>
 </article>
