@@ -3,19 +3,25 @@ import Layout from "../layouts/Layout.astro";
 import Badge from "../components/Badge.astro";
 import SkillCard from "../components/SkillCard.jsx";
 import Experience from "../components/Experience.astro";
-import SectionContainer from "../components/SectionContainer.astro"
+import SectionContainer from "../components/SectionContainer.astro";
+import BriefCase from "../components/Icons/BriefCase.astro";
+import CV from "../components/Icons/CV.astro";
+import Mail from "../components/Icons/Mail.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="Portafolio Lic. Sonia Orozco Lugo"
->
-  <main>
-    <SectionContainer class="py-36 pb-24">
+<Layout title="Portafolio Lic. Sonia Orozco Lugo">
+  <main class="p-4">
+    <SectionContainer id="top" class="py-36 pb-24">
       <img
-        class="rounded-full h-40 w-40 object-cover mb-4"
+        class="rounded-full h-40 w-40 object-cover mb-4 lg:mx-1 sm:mx-auto"
         src="/images/logo.jpeg"
         alt="Logo de Alejandra"
       />
-      <h1 class="text-5xl font-bold flex justify-center flex-row gap-x-4 pb-4">
+      <h1
+        class="text-3xl md:text-4xl lg:text-5xl font-bold flex justify-center
+        flex-row gap-x-4 pb-6 lg:pb-10"
+      >
         Hola, soy Sonia Orozco <a
           href="https://www.linkedin.com/in/sonia-orozco-lugo-26604025b/"
           target="_blank"
@@ -25,68 +31,46 @@ import SectionContainer from "../components/SectionContainer.astro"
           <Badge>Disponible para trabajar</Badge></a
         >
       </h1>
-      <h2 class="text-2xl opacity-80 text-wrap">
+      <h2
+        class="text-xl lg:text-2xl opacity-80 text-wrap mx-auto max-w-[700px]"
+      >
         <span class="text-blue-600 font-bold">+2 años de experiencia.</span>
          Administración de Personal y Agenda. De Guadalajara Jalisco. Me
         especializo en gestionar actividades administrativas
       </h2>
-      <div class="flex justify-center gap-5 flex-wrap mt-5">
+      <nav class="flex justify-center gap-5 flex-wrap mt-5">
         <SkillCard label="Gestión de Agenda" />
         <SkillCard label="Excel" />
         <SkillCard label="Canva" />
         <SkillCard label="Power Point" />
         <SkillCard label="Administración de personal" />
         <SkillCard label="agregar más" />
-      </div>
-      <div class="flex gap-x-5 p-5">
-        <a class="bg-blue-100 rounded-full p-3 transition hover:bg-blue-200 " href="">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-file-cv"
-            width="60"
-            height="60"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke=" rgb(59 130 246 / .80)"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M14 3v4a1 1 0 0 0 1 1h4"></path>
-            <path
-              d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z"
-            ></path>
-            <path d="M11 12.5a1.5 1.5 0 0 0 -3 0v3a1.5 1.5 0 0 0 3 0"></path>
-            <path d="M13 11l1.5 6l1.5 -6"></path>
-          </svg>
+      </nav>
+      <div class="flex lg:justify-start gap-x-5 p-5 sm:justify-center">
+        <a
+          class="bg-blue-100 rounded-full p-3 transition hover:bg-blue-200 hover:scale-110"
+          href=""
+        >
+          <CV />
         </a>
-        <a class="bg-blue-100 rounded-full p-3  transition hover:bg-blue-200" href="">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-mail"
-            width="60"
-            height="60"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke=" rgb(59 130 246 / .80)"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path
-              d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"
-            ></path>
-            <path d="M3 7l9 6l9 -6"></path>
-          </svg>
+        <a
+          class="bg-blue-100 rounded-full p-3 transition hover:bg-blue-200 hover:scale-110"
+          href=""
+        >
+          <Mail />
         </a>
       </div>
     </SectionContainer>
 
-	<SectionContainer class="px-10">
-    <h2 class="text-2xl font-semibold mb-7">Trayectoria</h2>
-		<Experience />
-	</SectionContainer>
+    <SectionContainer id="trayectoria" class="px-10">
+      <h2
+        class="text-2xl font-semibold mb-7 flex items-center opacity-90 gap-2"
+      >
+        <BriefCase />
+         Trayectoria
+      </h2>
+      <Experience />
+    </SectionContainer>
+    <Footer />
   </main>
 </Layout>
