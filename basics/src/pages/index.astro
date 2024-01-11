@@ -1,16 +1,20 @@
 ---
 import Post from "../components/Post.astro";
+import Count from "../components/Count.jsx";
 import DefaultLayout from "../layouts/DefaultLayout.astro";
-const response = await fetch("http://localhost:3000/posts");
-const posts = await response.json();
+
 ---
 
 
 
     <DefaultLayout>
+      <!-- <meta slot="header" charset="utf-8" />
+      <link slot="header" rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <meta slot="header" name="viewport" content="width=device-width" />
+      <meta slot="header" name="generator" content={Astro.generator} />
+      <title slot="header">my astro app</title> -->
       <h1>Astro</h1>
-      <div class="flex justify-evenly flex-wrap">
-        {posts.map((post) => <Post post={post} />)}
-      </div>
+   
+      <Count client:visible />
     </DefaultLayout>
 
